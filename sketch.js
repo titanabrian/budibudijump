@@ -38,9 +38,10 @@ function resetCanvas(){
     score = new Score();
     updateScore=100;
     tempSound[0]=gameOverSfx;
-    summerSfx.setVolume(0.5);
-    summerSfx.setLoop(true);
-    summerSfx.play();
+    tempSound[1]=summerSfx;
+    tempSound[1].setVolume(0.5);
+    tempSound[1].setLoop(true);
+    tempSound[1].play();
     rintangan=[];
 }
 
@@ -59,7 +60,7 @@ function touchStarted(){
     }else if(budi.over){
         resetCanvas();
     }
-  }
+}
 
 function draw() {
     background(bg);
@@ -89,13 +90,14 @@ function draw() {
         r.move();
         if(budi.hits(r)){
             console.log("Game Over");
-            summerSfx.stop();
             try{
+                tempSound[1].stop();
                 tempSound[0].setVolume(0.7);
                 tempSound[0].play();
             }catch(ex){
-
+                
             }
+            tempSound[1]=null;
             tempSound[0]=null;
             textFont(fontGameOver);
             textSize(100);
