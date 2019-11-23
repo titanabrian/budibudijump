@@ -52,11 +52,11 @@ function keyPressed(){
   }
 }
 
-function mouseClicked(){
+function touchStarted(){
     // console.log(mouseButton);
-    if(mouseButton == 'left' && !budi.over){
+    if(!budi.over){
       budi.jump();
-    }else if(mouseButton=='left'&& budi.over){
+    }else if(budi.over){
         resetCanvas();
     }
   }
