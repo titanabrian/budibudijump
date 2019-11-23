@@ -15,7 +15,7 @@ class Score {
         textSize(this.size);
         textAlign(RIGHT);
         fill(this.r,this.g,this.b);
-        text("Saldo Binomo : "+String(this.score)+" Dolar",this.x,this.y);
+        text("Saldo Binomo : "+String(this.score)+" Dollar",this.x,this.y);
     }
 
     update(value) {
